@@ -12,6 +12,7 @@ samt kunna skuta andra spelare, dock kommer det att använda ett krigs poäng f�
 - Alla spelare måste vara klar innan nästa runa kommer att gå i genom
 - Turn based
 - Om man hinner ut ur en andra spelares range blir man inte skjuten nästa runda. 
+- Man kan heala 1 hp varannan runda kostar 1 eller 2 krigs poäng (har inte bestämt).
 
 ## Behöver fixa
 - Kunna skapa en koppling mellan alla spela och den som hostar spelet.(En av spelarna)
