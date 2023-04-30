@@ -2,12 +2,12 @@
 Det projekt ska jag göra ett spel som använder sig av
 nätverk teknik och den vituella designen kommer vara ett swing GUI.
 I spelet är man en tank som kan röra runt sig i en rutig bräda
-samt kunna skuta andra spelare, dock kommer det att använda ett krigs poäng för att göra något.
+samt kunna skjuta andra spelare, dock kommer det att använda ett krigs poäng för att göra något.
 
 ## Regler 
 - Varje rörelse kommer att kosta ett poäng som man kan bara röra sig upp, ner, höger och vänster.
-- Det tar två poäng att skuta andra spelare som gör 1 damage på den som blev skutten, man kan skjuta på en distans av 3 ruter.
-- Spelaren har 3 HP från början av spelet.
+- Det tar två poäng att skjuta andra spelare som gör 1 damage på den som blev skutten, man kan skjuta på en distans av 3 ruter.
+- Spelaren har 3 HP från början av spelet det är också deras max HP.
 - Man får en krigs poäng varje runda.
 - Alla spelare måste vara klar innan nästa runa kommer att gå i genom
 - Turn based
