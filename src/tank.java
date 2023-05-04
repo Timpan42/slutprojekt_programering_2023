@@ -17,8 +17,8 @@ public class tank {
         return warPoints;
     }
 
-    public void setWarPoints(int warPoints) {
-        this.warPoints = warPoints;
+    public void setWarPoints(int Points) {
+        this.warPoints =  warPoints + Points;
     }
 
     public int getX() {
@@ -50,6 +50,9 @@ public class tank {
     public void heal(){
         warPoints -= 2;
         hp += 1;
+    }
+    public void takeDamage(){
+        hp -= damage;
     }
 }
 
