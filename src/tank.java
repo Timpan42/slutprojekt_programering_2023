@@ -4,13 +4,14 @@ public class tank {
     public int x;
     public int y;
     public int damage = 1;
+    public boolean living = true;
 
     public int getHp() {
         return hp;
     }
 
-    public void setHp(int hp) {
-        this.hp = hp;
+    public void setHp(int number) {
+        this.hp = hp + number;
     }
 
     public int getWarPoints() {
@@ -39,6 +40,14 @@ public class tank {
 
     public int getDamage(){
         return damage;
+    }
+
+    public boolean isLiving() {
+        return living;
+    }
+
+    public void setLiving(boolean living) {
+        this.living = living;
     }
 
     public void shoot(){

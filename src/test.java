@@ -12,9 +12,14 @@ public class test {
         c1.setX(100);
         c1.setY(100);
         c1.movePlayer();
+        c1.setHp(-2);
+        c1.setWarPoints(2);
+        c1.healPlayer();
         System.out.println("WP: " +c1.getWarPoints() + "\n"
                 + "X: " + c1.getX() + "\n"
-                + "Y: " + c1.getY());
+                + "Y: " + c1.getY() + "\n"
+                + "HP: "+ c1.getHp()
+        );
 
     }
 }
