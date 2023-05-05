@@ -50,7 +50,7 @@ public class tank {
         this.living = living;
     }
 
-    public void shoot(){
+    public void shot(){
         warPoints -= 2;
     }
     public void move(){
