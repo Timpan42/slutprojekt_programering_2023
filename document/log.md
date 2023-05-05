@@ -10,6 +10,11 @@ För att spela måste man vara en client.
 Clientetn skicka info till servern som uppdaterar brädan.
 Alla kan se brädan på sin skärm som uppdateras av servern.
 
+En guide på hur man gör grid spel:
+https://www.youtube.com/playlist?list=PLgLT8uqXESN-oVsv9PA4NtcTiqjk4Z4g7
+
+Används för att göra GUI.
+
 ## Ska göra
 ### Servern 
 - ska börja med den
@@ -37,3 +42,9 @@ Skrev klart readme och gjorde klass diagram
 ### Torsdag
 Utveklade klass diagram och började med att göra all info till tank.
 Gjorde också clientet där moment logiken har börjas men inte testat.
+
+### Fredag
+Fixade stora delar av clienten och utökade den med info jag tror kommer att behövas.
+Gjorde så man kan heala, skjuta, om man blir skjuten och om man dör. 
+Utökade med mer info i tank som kan behövas. 
+Hittade en guide som kommer att användas för att göra GUI för spelet. 
