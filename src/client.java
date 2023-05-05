@@ -30,6 +30,7 @@ public class client extends tank{
                JOptionPane.showMessageDialog(null,"Wrong input");
            }
         } else {
+            // could not move
             setWarPoints(1);
         }
     }
