@@ -48,3 +48,11 @@ Fixade stora delar av clienten och utökade den med info jag tror kommer att beh
 Gjorde så man kan heala, skjuta, om man blir skjuten och om man dör. 
 Utökade med mer info i tank som kan behövas. 
 Hittade en guide som kommer att användas för att göra GUI för spelet. 
+
+## vecka 19
+### Torsdag
+Så jag försökte jobba med grid templated som jag länkade till.
+Dock gick det väldigt dåligt att använda efter att importera den.
+Den hade massa errors och den körde ändå men om man fick bord errorna så sluta den funka.
+Så jag tror det är bättre att göra en från början eller gamla projekt.
+### Fredag
