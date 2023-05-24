@@ -20,7 +20,7 @@ samt kunna skjuta andra spelare, dock kommer det att använda ett krigs poäng f
 
 ## Behöver fixa
 - Kunna skapa en koppling mellan alla spela och den som hostar spelet.(En av spelarna)
-- Behöver en server och klienter.
+- Behöver en testPack.server och klienter.
 - Lära sig bättre hur man kan skapa denna nätverks koppling.
 - En synlig bräda med spelare som är enkla block
 - Att välja ett dra görs med att trycka en knapp vad man vill göra och sen välja klar.
