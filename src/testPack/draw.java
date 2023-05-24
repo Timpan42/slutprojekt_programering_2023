@@ -5,17 +5,72 @@ import java.awt.*;
 
 public class draw extends Canvas {
 
-    private int canvasX = 400;
-    private int canvasY = 400;
+    private int canvasX = 600;
+    private int canvasY = 600;
+    final static boolean shouldFill = true;
+    final static boolean shouldWeightX = true;
+
 
     public static void main(String[] args) {
+        int canvasX = 600;
+        int canvasY = 600;
         JFrame frame = new JFrame("testing");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        GridBagLayout layout = new GridBagLayout();
+        frame.setLayout(layout);
+
+        GridBagConstraints constraints = new GridBagConstraints();
+        if(shouldFill){
+            constraints.fill = GridBagConstraints.HORIZONTAL;
+        }
+
         Canvas canvas = new draw();
-        canvas.setSize(400,400);
-        frame.add(canvas);
+        canvas.setSize(canvasX,canvasY);
+        canvas.setBackground(new Color(69,72,100));
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.insets = new Insets(10,20,0,20);
+        frame.add(canvas, constraints);
+
+        Button buttonReady = new Button("Ready");
+        if (shouldWeightX) {
+            constraints.weightx = 0.5;
+        }
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        constraints.insets = new Insets(10,100,10,100);
+        frame.add(buttonReady,constraints);
+
+        Button buttonHeal = new Button("Heal");
+        constraints.weightx = 0.5;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.gridx = 0;
+        constraints.gridy = 2;
+        constraints.insets = new Insets(10,100,10,100);
+        frame.add(buttonHeal, constraints);
+
+        Button buttonMove = new Button("Move");
+        constraints.weightx = 0.5;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.gridx = 0;
+        constraints.gridy = 3;
+        constraints.insets = new Insets(10,100,10,100);
+        frame.add(buttonMove, constraints);
+
+        Button buttonAttack = new Button("Attack");
+        constraints.weightx = 0.5;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.gridx = 0;
+        constraints.gridy = 4;
+        constraints.insets = new Insets(10,100,10,100);
+        frame.add(buttonAttack, constraints);
+
         frame.pack();
         frame.setVisible(true);
-        canvas.setBackground(new Color(69,72,100));
+
     }
     public void paint(Graphics gra){
         // brädans linjer X
@@ -27,6 +82,10 @@ public class draw extends Canvas {
         linsX(gra,300);
         linsX(gra,350);
         linsX(gra,400);
+        linsX(gra,450);
+        linsX(gra,500);
+        linsX(gra,550);
+        linsX(gra,600);
 
         //brädans linjer Y
         linsY(gra,50);
@@ -37,6 +96,10 @@ public class draw extends Canvas {
         linsY(gra,300);
         linsY(gra,350);
         linsY(gra,400);
+        linsY(gra,450);
+        linsY(gra,500);
+        linsY(gra,550);
+        linsY(gra,600);
 
         // spelarnas karaktär
         players(gra,55, 55, 1);
