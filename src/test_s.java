@@ -1,16 +1,10 @@
-package testPack;
-
-public class test {
+public class test_s {
     public static void main(String[] args) {
         server s = new server();
-        clients c = new clients();
-
         s.acceptClients();
-
         s.getStreams();
-        c.getStreams();
-
-        c.runProtocol();
         s.runProtocol();
+        s.msg();
+
     }
 }

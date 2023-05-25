@@ -1,5 +1,3 @@
-package testPack;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,6 +7,10 @@ public class draw extends Canvas {
     private int canvasY = 600;
     final static boolean shouldFill = true;
     final static boolean shouldWeightX = true;
+    public Button buttonReady;
+    public Button buttonHeal;
+    public Button buttonMove;
+    public Button buttonAttack;
 
 
     public static void main(String[] args) {
@@ -34,7 +36,7 @@ public class draw extends Canvas {
         constraints.insets = new Insets(10,20,0,20);
         frame.add(canvas, constraints);
 
-        Button buttonReady = new Button("Ready");
+        buttonReady = new Button("Ready");
         if (shouldWeightX) {
             constraints.weightx = 0.5;
         }
@@ -44,7 +46,7 @@ public class draw extends Canvas {
         constraints.insets = new Insets(10,100,10,100);
         frame.add(buttonReady,constraints);
 
-        Button buttonHeal = new Button("Heal");
+        buttonHeal = new Button("Heal");
         constraints.weightx = 0.5;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.gridx = 0;
@@ -52,7 +54,7 @@ public class draw extends Canvas {
         constraints.insets = new Insets(10,100,10,100);
         frame.add(buttonHeal, constraints);
 
-        Button buttonMove = new Button("Move");
+        buttonMove = new Button("Move");
         constraints.weightx = 0.5;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.gridx = 0;
@@ -60,7 +62,7 @@ public class draw extends Canvas {
         constraints.insets = new Insets(10,100,10,100);
         frame.add(buttonMove, constraints);
 
-        Button buttonAttack = new Button("Attack");
+        buttonAttack = new Button("Attack");
         constraints.weightx = 0.5;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.gridx = 0;
@@ -119,6 +121,11 @@ public class draw extends Canvas {
 
 
 
+    }
+
+
+    public void sendButtonReady(){
+        return buttonReady;
     }
 
     public void linsX (Graphics gra, int x){
