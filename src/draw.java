@@ -7,27 +7,31 @@ public class draw extends Canvas {
     private int canvasY = 600;
     final static boolean shouldFill = true;
     final static boolean shouldWeightX = true;
+
+    public Canvas canvas;
+
     public Button buttonReady;
     public Button buttonHeal;
     public Button buttonMove;
     public Button buttonAttack;
 
-
-    public static void main(String[] args) {
-        int canvasX = 600;
-        int canvasY = 600;
-        JFrame frame = new JFrame("testing");
+    public draw(String frameName){
+        JFrame frame = new JFrame(frameName);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         GridBagLayout layout = new GridBagLayout();
         frame.setLayout(layout);
-
         GridBagConstraints constraints = new GridBagConstraints();
-        if(shouldFill){
-            constraints.fill = GridBagConstraints.HORIZONTAL;
-        }
 
-        Canvas canvas = new draw();
+        canvas = new Canvas(){
+            public void paint(Graphics gra){
+                // brädans linjer X
+                drawLinX(gra);
+                //brädans linjer Y
+                drawLinY(gra);
+                // spelarnas karaktär
+                drawPlayers(gra);
+            }
+        };
         canvas.setSize(canvasX,canvasY);
         canvas.setBackground(new Color(69,72,100));
         constraints.gridx = 0;
@@ -35,6 +39,7 @@ public class draw extends Canvas {
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.insets = new Insets(10,20,0,20);
         frame.add(canvas, constraints);
+
 
         buttonReady = new Button("Ready");
         if (shouldWeightX) {
@@ -74,8 +79,12 @@ public class draw extends Canvas {
         frame.setVisible(true);
 
     }
-    public void paint(Graphics gra){
-        // brädans linjer X
+
+    public Button sendButtonReady(){
+        return buttonReady;
+    }
+
+    public void drawLinX(Graphics gra){
         linsX(gra,50);
         linsX(gra,100);
         linsX(gra,150);
@@ -89,7 +98,9 @@ public class draw extends Canvas {
         linsX(gra,550);
         linsX(gra,600);
 
-        //brädans linjer Y
+    }
+
+    public void drawLinY(Graphics gra){
         linsY(gra,50);
         linsY(gra,100);
         linsY(gra,150);
@@ -103,7 +114,9 @@ public class draw extends Canvas {
         linsY(gra,550);
         linsY(gra,600);
 
-        // spelarnas karaktär
+    }
+
+    public void drawPlayers(Graphics gra){
         players(gra,55, 55, 1);
         players(gra,55, 105, 2);
         players(gra,55, 155, 3);
@@ -119,15 +132,7 @@ public class draw extends Canvas {
         players(gra,5, 255, 10);
         players(gra,205, 255, 11);
 
-
-
     }
-
-
-    public void sendButtonReady(){
-        return buttonReady;
-    }
-
     public void linsX (Graphics gra, int x){
         gra.fillRect(x, 0, 5, canvasY);
     }

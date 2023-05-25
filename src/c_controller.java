@@ -3,6 +3,7 @@ public class c_controller {
     draw bord;
 
     public c_controller(){
-
+        bord = new draw("clients");
+        clients = new clients();
     }
 }
