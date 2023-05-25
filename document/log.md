@@ -1,4 +1,4 @@
-
+[
 ## info
 Figma skiss: https://www.figma.com/file/8ZKrw4c9AARgrZiZ94sVRn/Untitled?node-id=2%3A84&t=q5vRXNLk3nrzcBOW-1
 
@@ -55,4 +55,13 @@ Så jag försökte jobba med grid templated som jag länkade till.
 Dock gick det väldigt dåligt att använda efter att importera den.
 Den hade massa errors och den körde ändå men om man fick bord errorna så sluta den funka.
 Så jag tror det är bättre att göra en från början eller gamla projekt.
+### Fredag
+Sjuk denna dag 
+
+## vecka 21
+### Torsdag
+Jag har gjort en server och client som kan skicka info i mella dem
+Har börjat att koppla ihop alla delar med varandra.
+Behöver ändra i draw filen så controllen kan använda och ändra på informationen 
+
 ### Fredag
