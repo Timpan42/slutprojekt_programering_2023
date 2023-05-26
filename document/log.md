@@ -65,3 +65,6 @@ Har börjat att koppla ihop alla delar med varandra.
 Behöver ändra i draw filen så controllen kan använda och ändra på informationen 
 
 ### Fredag
+Har gjort en ActionListener till knapparna
+samt en funktion som ska updatera brädan 
+så spelaren rör på sig. Funkar inte riktigt  
