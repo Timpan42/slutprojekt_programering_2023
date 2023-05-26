@@ -6,9 +6,13 @@ public class s_controller {
     public draw bord;
 
     public s_controller(){
-        bord = new draw("server");
+        bord = new draw("server", false);
 
         server = new server();
+        server.acceptClients();
+        server.getStreams();
+        server.runProtocol();
+        server.msg();
     }
 
 }

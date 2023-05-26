@@ -9,13 +9,16 @@ public class draw extends Canvas {
     final static boolean shouldWeightX = true;
 
     public Canvas canvas;
-
     public Button buttonReady;
     public Button buttonHeal;
     public Button buttonMove;
     public Button buttonAttack;
 
-    public draw(String frameName){
+    public int pX;
+    public int pY;
+    public int pId;
+
+    public draw(String frameName, Boolean visible){
         JFrame frame = new JFrame(frameName);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         GridBagLayout layout = new GridBagLayout();
@@ -29,7 +32,10 @@ public class draw extends Canvas {
                 //brädans linjer Y
                 drawLinY(gra);
                 // spelarnas karaktär
-                drawPlayers(gra);
+                drawPlayers(gra,pX,pY,pId);
+
+                update();
+
             }
         };
         canvas.setSize(canvasX,canvasY);
@@ -76,12 +82,12 @@ public class draw extends Canvas {
         frame.add(buttonAttack, constraints);
 
         frame.pack();
-        frame.setVisible(true);
+        frame.setVisible(visible);
 
     }
 
-    public Button sendButtonReady(){
-        return buttonReady;
+    public void update(Graphics gra){
+        paint(gra);
     }
 
     public void drawLinX(Graphics gra){
@@ -116,23 +122,11 @@ public class draw extends Canvas {
 
     }
 
-    public void drawPlayers(Graphics gra){
-        players(gra,55, 55, 1);
-        players(gra,55, 105, 2);
-        players(gra,55, 155, 3);
-
-        players(gra,155, 55, 4);
-        players(gra,155, 105, 5);
-        players(gra,155, 155, 6);
-
-        players(gra,55, 305, 7);
-        players(gra,105, 305, 8);
-        players(gra,155, 305, 9);
-
-        players(gra,5, 255, 10);
-        players(gra,205, 255, 11);
+    public void drawPlayers(Graphics gra, int x, int y, int id){
+        players(gra,x, y, id);
 
     }
+
     public void linsX (Graphics gra, int x){
         gra.fillRect(x, 0, 5, canvasY);
     }
@@ -147,4 +141,43 @@ public class draw extends Canvas {
         gra.fillRect(x,y,45,45);
     }
 
+    public Button getButtonReady(){
+        return buttonReady;
+    }
+
+    public Button getButtonMove(){
+        return buttonMove;
+    }
+
+    public Button getButtonHeal(){
+        return buttonHeal;
+    }
+
+    public Button getButtonAttack(){
+        return buttonAttack;
+    }
+
+    public int getpX() {
+        return pX;
+    }
+
+    public void setpX(int x) {
+        this.pX = x;
+    }
+
+    public int getpY() {
+        return pY;
+    }
+
+    public void setpY(int y) {
+        this.pY = y;
+    }
+
+    public int getpId() {
+        return pId;
+    }
+
+    public void setpId(int id) {
+        this.pId = id;
+    }
 }

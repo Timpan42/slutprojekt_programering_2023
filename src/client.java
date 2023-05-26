@@ -34,14 +34,13 @@ public class client extends tank{
                 input = input.toLowerCase();
                 if (input.equals("w") || input.equals("a") || input.equals("s") || input.equals("d")) {
                     if (input.equals("w")) {
-                        setY(y - 1);
+                        setY(y - 50);
                     } else if (input.equals("a")) {
-                        setX(x - 1);
+                        setX(x - 50);
                     } else if (input.equals("s")) {
-                        setY(y + 1);
-
+                        setY(y + 50);
                     } else {
-                        setX(x + 1);
+                        setX(x + 50);
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Wrong input");
