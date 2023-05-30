@@ -21,11 +21,13 @@ public class clients extends client {
     public int port = 12345;
     public String ip = "127.0.0.1";
 
+    public String playerInfo = "Ready";
+    public int[] bordXY = {0,0};
+
     public clients(){
         super();
         try {
             server = new Socket(ip, port);
-
         } catch (IOException e){
             System.err.println("Clients: Kunde inte koppla till servern!");
             e.printStackTrace();
@@ -33,6 +35,7 @@ public class clients extends client {
         System.out.println("Clients: kopplad till servern ...");
     }
 
+    // Hämnta streams
     public void getStreams(){
         try {
             clientOut = new ObjectOutputStream(server.getOutputStream());
@@ -43,26 +46,56 @@ public class clients extends client {
         }
         System.out.println("Client: Have server streams ...");
     }
-    public void runProtocol(){
+
+
+    // Sätter meddelandet som ska skickas till servern
+    public void setPayerInfo(String info){
+        playerInfo = info;
+    }
+
+    // Hämntar playerInfo
+    public String getPlayerInfo(){
+        return playerInfo;
+    }
+
+    // Skicka playerInfo till servern
+    public void sendInfo(){
         try {
-            String messageOut = "Hej server";
-            clientOut.writeObject(messageOut);
+            clientOut.writeObject(playerInfo);
             clientOut.flush();
         } catch (IOException e){
-            System.err.println("Clients: Kunde inte skicka msg!");
+            System.err.println("Clients: PlayerInfo Kunde inte skickas!");
             e.printStackTrace();
         }
-        System.out.println("Clients: Kunde skicka msg ...");
+        System.out.println("Clients: PlayerInfo kunde skickas ...");
     }
+
+    // Sätter spelbrädan som ska skickas till servern
+    public void setBordXY(int x, int y){
+        bordXY = new int[]{x, y};
+    }
+
+    // Skicka spelbrädan till servern
+    public void sendBordInfo(){
+        try {
+            clientOut.writeObject(bordXY);
+            clientOut.flush();
+        } catch (IOException e){
+            System.err.println("Clients: BordInfo kunde inte skickas!");
+            e.printStackTrace();
+        }
+        System.out.println("Clients: BordInfo kunde skickas ...");
+    }
+
+    // Hämntar meddelandet som servern som skickade
     public void msg(){
         try {
             String msgIn = (String) clientIn.readObject();
             System.out.println(msgIn);
         } catch (IOException | ClassNotFoundException e){
-            System.err.println("");
+            System.err.println("Could not get msg");
             e.printStackTrace();
         }
-        System.out.println("");
+        System.out.println("Gott msg");
     }
-
 }

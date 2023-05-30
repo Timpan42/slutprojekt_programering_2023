@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
 
 public class server {
     public String host = "localhost";
@@ -8,6 +9,9 @@ public class server {
     public Socket clients;
     public ObjectOutputStream serverOut;
     public ObjectInputStream serverIn;
+    public String message;
+    public int[] bordInfo = {0,0};
+    public String playerInfoIn;
 
     /*
     try {
@@ -29,6 +33,7 @@ public class server {
         System.out.println("Server: Servern är startad ...");
     }
 
+    // ta i mot clients
     public void acceptClients(){
         try {
             clients = server.accept();
@@ -40,6 +45,7 @@ public class server {
         System.out.println("Server: Clients accepted ...");
     }
 
+    // Hämnta streams
     public void getStreams(){
         try {
             serverOut = new ObjectOutputStream(clients.getOutputStream());
@@ -51,10 +57,15 @@ public class server {
         System.out.println("Server: Have server clients ...");
     }
 
-    public void runProtocol(){
+    // Sätter meddelandet som ska skickas till client
+    public void setMessage(String msg){
+        message = msg;
+    }
+
+    // Skicka meddelandet till client
+    public void sendMessage(){
         try {
-            String messageOut = "Hej clients";
-            serverOut.writeObject(messageOut);
+            serverOut.writeObject(message);
             serverOut.flush();
         } catch (IOException e){
             System.err.println("Server: Kunde inte skicka msg!");
@@ -62,14 +73,20 @@ public class server {
         }
         System.out.println("Server: Kunde skicka msg ...");
     }
-    public void msg(){
+
+    // ta i mot playerInfon från client
+    public void receivePlayerInfo(){
         try {
-            String msgIn = (String) serverIn.readObject();
-            System.out.println(msgIn);
+            if (serverIn.readObject() instanceof Integer[]){
+                bordInfo = (int[]) serverIn.readObject();
+            } else {
+                playerInfoIn = (String) serverIn.readObject();
+            }
+            System.out.println(playerInfoIn);
         } catch (IOException | ClassNotFoundException e){
-            System.err.println("");
+            System.err.println("Server: Could not get PlayerInfo!");
             e.printStackTrace();
         }
-        System.out.println("");
+        System.out.println("Server: Gott playerInfo ...");
     }
 }

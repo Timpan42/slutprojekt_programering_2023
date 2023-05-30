@@ -5,6 +5,7 @@ public class draw extends Canvas {
 
     private int canvasX = 600;
     private int canvasY = 600;
+
     final static boolean shouldFill = true;
     final static boolean shouldWeightX = true;
 
@@ -27,15 +28,13 @@ public class draw extends Canvas {
 
         canvas = new Canvas(){
             public void paint(Graphics gra){
+                super.paint(gra);
                 // brädans linjer X
                 drawLinX(gra);
                 //brädans linjer Y
                 drawLinY(gra);
                 // spelarnas karaktär
                 drawPlayers(gra,pX,pY,pId);
-
-                update();
-
             }
         };
         canvas.setSize(canvasX,canvasY);
@@ -83,12 +82,19 @@ public class draw extends Canvas {
 
         frame.pack();
         frame.setVisible(visible);
+        frame.setLocationRelativeTo(null);
 
     }
 
-    public void update(Graphics gra){
-        paint(gra);
+    public void startRepaint(){
+        boolean startRepaint = true;
+        if(startRepaint == true){
+            System.out.println("För guds skull");
+            repaint();
+            startRepaint = false;
+        }
     }
+
 
     public void drawLinX(Graphics gra){
         linsX(gra,50);

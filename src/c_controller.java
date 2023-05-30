@@ -5,36 +5,78 @@ import java.awt.event.ActionListener;
 public class c_controller {
     clients clients;
     draw bord;
-    int id;
-    int x;
-    int y;
+
     public c_controller(){
         clients = new clients();
         bord = new draw("clients", true);
-        bord.setpId(1);
-        bord.setpX(55);
-        bord.setpY(55);
+
         clients.setWarPoints(3);
 
+        bord.setpId(1);
+        bord.setpX(5);
+        bord.setpY(5);
+
+        clients.getStreams();
+
+
+
+        bord.getButtonReady().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playerIsReady();
+                clients.msg();
+            }
+        });
+
+        bord.getButtonHeal().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playerHealed();
+            }
+        });
 
 
         bord.getButtonMove().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateMovment();
-                bord.repaint();
+                UpdateMovement();
+                bord.startRepaint();
+            }
+        });
+        bord.getButtonAttack().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playerAttack();
 
             }
         });
-
-        clients.getStreams();
-        clients.runProtocol();
-        clients.msg();
     }
 
-    public void UpdateMovment(){
+    // ska skicka en signal till servern som säger att spelaren är redo för nästa runda
+    public void playerIsReady(){
+        if (clients.getPlayerInfo().equals("Movement")){
+            clients.sendBordInfo();
+        }
+        clients.sendInfo();
+    }
+
+    // ska ge HP till spelaren om den kan
+    public void playerHealed(){
+        clients.playerHeal();
+        clients.setPayerInfo("Heal");
+    }
+
+    // ska skicka en signal till servern med information om vars spelaren har rört på sig
+    public void UpdateMovement(){
+
+        System.out.println("\n" + "new Movement");
+        int x;
+        int y;
+
         x = bord.getpX();
+        System.out.println("bord x: " + x);
         y = bord.getpY();
+        System.out.println("bord y: " + y);
 
         clients.setX(x);
         clients.setY(y);
@@ -42,9 +84,24 @@ public class c_controller {
         clients.playerMove();
 
         x = clients.getX();
+        System.out.println("clients x: "+ x);
         y = clients.getY();
+        System.out.println("clients y: " + y);
 
         bord.setpX(x);
         bord.setpY(y);
+
+        x = bord.getpX();
+        System.out.println("bord x: " + x);
+        y = bord.getpY();
+        System.out.println("bord y: " + y);
+
+        clients.setBordXY(x,y);
+        clients.setPayerInfo("Movement");
+    }
+
+    // ska skicka en signal till servern så den kan kolla om spelaren kan attackera någon annan.
+    public void playerAttack(){
+        clients.setPayerInfo("Attack");
     }
 }

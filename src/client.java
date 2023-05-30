@@ -5,6 +5,7 @@ public class client extends tank{
     String n = "\n";
     String name = "";
     int healTimer;
+
     public client() {
         super();
     }
@@ -21,6 +22,10 @@ public class client extends tank{
         System.out.println("need more warpoints!" + n);
     }
 
+    public void work(String w){
+        System.out.println(w + n);
+    }
+
     public void playerMove() {
         if (getWarPoints() >= 1) {
             // ska fixas senare
@@ -35,12 +40,16 @@ public class client extends tank{
                 if (input.equals("w") || input.equals("a") || input.equals("s") || input.equals("d")) {
                     if (input.equals("w")) {
                         setY(y - 50);
+                        work("w Works");
                     } else if (input.equals("a")) {
                         setX(x - 50);
+                        work("a Works");
                     } else if (input.equals("s")) {
                         setY(y + 50);
+                        work("s Works");
                     } else {
                         setX(x + 50);
+                        work("d Works");
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Wrong input");

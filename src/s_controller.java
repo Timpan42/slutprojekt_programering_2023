@@ -11,8 +11,10 @@ public class s_controller {
         server = new server();
         server.acceptClients();
         server.getStreams();
-        server.runProtocol();
-        server.msg();
+
+        server.setMessage("You got mail");
+        server.sendMessage();
+        server.receivePlayerInfo();
     }
 
 }
