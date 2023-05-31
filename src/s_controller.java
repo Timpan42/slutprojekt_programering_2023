@@ -1,6 +1,3 @@
-import javax.swing.*;
-import java.awt.*;
-
 public class s_controller {
     public server server;
     public draw bord;
@@ -10,11 +7,12 @@ public class s_controller {
 
         server = new server();
         server.acceptClients();
-        server.getStreams();
+        //server.getStreams();
 
-        server.setMessage("You got mail");
-        server.sendMessage();
+        // server.setMessage("You got mail");
+        //server.sendMessage();
         server.receivePlayerInfo();
-    }
 
+        server.playerRequest();
+    }
 }

@@ -21,7 +21,7 @@ public class clients extends client {
     public int port = 12345;
     public String ip = "127.0.0.1";
 
-    public String playerInfo = "Ready";
+    public String playerInfo = "R";
     public int[] bordXY = {0,0};
 
     public clients(){
@@ -88,7 +88,7 @@ public class clients extends client {
     }
 
     // Hämntar meddelandet som servern som skickade
-    public void msg(){
+    public void serverMessage(){
         try {
             String msgIn = (String) clientIn.readObject();
             System.out.println(msgIn);

@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,7 +23,6 @@ public class c_controller {
             @Override
             public void actionPerformed(ActionEvent e) {
                 playerIsReady();
-                clients.msg();
             }
         });
 
@@ -54,16 +52,19 @@ public class c_controller {
 
     // ska skicka en signal till servern som säger att spelaren är redo för nästa runda
     public void playerIsReady(){
-        if (clients.getPlayerInfo().equals("Movement")){
+        if (clients.getPlayerInfo().equals("M")){
             clients.sendBordInfo();
         }
         clients.sendInfo();
+        bord.setGreyButton(false);
+        System.out.println(clients.getPlayerInfo());
     }
 
     // ska ge HP till spelaren om den kan
     public void playerHealed(){
         clients.playerHeal();
-        clients.setPayerInfo("Heal");
+        clients.setPayerInfo("H");
+        bord.setGreyButton(false);
     }
 
     // ska skicka en signal till servern med information om vars spelaren har rört på sig
@@ -97,11 +98,14 @@ public class c_controller {
         System.out.println("bord y: " + y);
 
         clients.setBordXY(x,y);
-        clients.setPayerInfo("Movement");
+        clients.setPayerInfo("M");
+        bord.setGreyButton(false);
     }
 
     // ska skicka en signal till servern så den kan kolla om spelaren kan attackera någon annan.
     public void playerAttack(){
-        clients.setPayerInfo("Attack");
+        clients.setPayerInfo("A");
+        bord.setGreyButton(false);
+
     }
 }

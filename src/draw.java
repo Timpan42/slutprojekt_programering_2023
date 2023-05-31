@@ -19,6 +19,8 @@ public class draw extends Canvas {
     public int pY;
     public int pId;
 
+    public boolean greyButton = true;
+
     public draw(String frameName, Boolean visible){
         JFrame frame = new JFrame(frameName);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,6 +59,7 @@ public class draw extends Canvas {
         frame.add(buttonReady,constraints);
 
         buttonHeal = new Button("Heal");
+        buttonHeal.setEnabled(greyButton);
         constraints.weightx = 0.5;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.gridx = 0;
@@ -65,6 +68,7 @@ public class draw extends Canvas {
         frame.add(buttonHeal, constraints);
 
         buttonMove = new Button("Move");
+        buttonMove.setEnabled(greyButton);
         constraints.weightx = 0.5;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.gridx = 0;
@@ -73,6 +77,7 @@ public class draw extends Canvas {
         frame.add(buttonMove, constraints);
 
         buttonAttack = new Button("Attack");
+        buttonAttack.setEnabled(greyButton);
         constraints.weightx = 0.5;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.gridx = 0;
@@ -146,6 +151,12 @@ public class draw extends Canvas {
         gra.setColor(new Color(140,50,150));
         gra.fillRect(x,y,45,45);
     }
+
+
+    public void setGreyButton(boolean set){
+        greyButton = set;
+    }
+
 
     public Button getButtonReady(){
         return buttonReady;

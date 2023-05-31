@@ -1,7 +1,6 @@
 import javax.swing.*;
-import java.util.Locale;
 
-public class client extends tank{
+public class client extends tank {
     String n = "\n";
     String name = "";
     int healTimer;
