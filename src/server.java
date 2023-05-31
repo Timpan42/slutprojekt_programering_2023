@@ -51,13 +51,12 @@ public class server {
                 s_clientHandler clientHandler = new s_clientHandler(client);
                 clients.add(clientHandler);
                 pool.execute(clientHandler);
-
+                System.out.println("Server: Clients accepted ...");
             }
         } catch (IOException e){
             System.err.println("Server: Did not accept clients!");
             e.printStackTrace();
         }
-        System.out.println("Server: Clients accepted ...");
     }
 
     // Hämnta streams
