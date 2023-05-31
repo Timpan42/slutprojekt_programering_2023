@@ -1,12 +1,50 @@
+import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
+
 import javax.swing.*;
 
 public class client extends tank {
     String n = "\n";
     String name = "";
     int healTimer;
+    boolean move = true;
+    boolean canShot = false;
+    boolean gottShot = true;
+
 
     public client() {
         super();
+    }
+
+    public int getHealTimer() {
+        return healTimer;
+    }
+
+    public void setHealTimer(int healTimer) {
+        this.healTimer = healTimer;
+    }
+
+    public boolean isMove() {
+        return move;
+    }
+
+    public void setMove(boolean move) {
+        this.move = move;
+    }
+
+    public boolean isCanShot() {
+        return canShot;
+    }
+
+    public void setCanShot(boolean canShot) {
+        this.canShot = canShot;
+    }
+
+    public boolean isGottShot() {
+        return gottShot;
+    }
+
+    public void setGottShot(boolean gottShot) {
+        this.gottShot = gottShot;
     }
 
     public String getName() {
@@ -28,8 +66,7 @@ public class client extends tank {
     public void playerMove() {
         if (getWarPoints() >= 1) {
             // ska fixas senare
-            boolean move = true;
-
+            move = true;
             if (move) {
                 move();
                 int x = getX();
@@ -50,10 +87,11 @@ public class client extends tank {
                         setX(x + 50);
                         work("d Works");
                     }
+                    move = false;
                 } else {
                     JOptionPane.showMessageDialog(null, "Wrong input");
                 }
-            }else {
+            } else {
                 System.out.println("cant move!");
             }
         } else {
@@ -82,10 +120,11 @@ public class client extends tank {
 
     public void playerShot() {
         // ska fixas senare
-        boolean canShot = true;
+        canShot = true;
         if (canShot) {
             if (getWarPoints() >= 2) {
                 shot();
+                canShot = false;
             } else {
                 needMore();
             }
@@ -96,9 +135,10 @@ public class client extends tank {
 
     public void playerWasShot(){
         // ska fixas senare
-        boolean gottShot = true;
+        gottShot = true;
         if(gottShot){
             takeDamage();
+            gottShot = false;
         }
     }
 
