@@ -7,12 +7,7 @@ public class s_controller {
 
         server = new server();
         server.acceptClients();
-        //server.getStreams();
-
-        // server.setMessage("You got mail");
-        //server.sendMessage();
-        server.receivePlayerInfo();
-
-        server.playerRequest();
+        server.setMessage("Hello");
+        server.sendMessage();
     }
 }

@@ -90,7 +90,7 @@ public class clients extends client {
     // Hämntar meddelandet som servern som skickade
     public void serverMessage(){
         try {
-            String msgIn = (String) clientIn.readObject();
+            int msgIn = (int) clientIn.readObject();
             System.out.println(msgIn);
         } catch (IOException | ClassNotFoundException e){
             System.err.println("Could not get msg");
@@ -99,3 +99,17 @@ public class clients extends client {
         System.out.println("Gott msg");
     }
 }
+
+/* kode som inte funkar.
+Object input = clientIn.readObject();
+            if (input instanceof Integer[]) {
+                serverIntArray = (int[]) input;
+                System.out.println(serverIntArray);
+            } else if (input instanceof Integer) {
+                serverInt = (int) clientIn.readObject();
+                System.out.println(serverInt);
+            } else if (input instanceof String){
+                serverString = (String) input;
+                System.out.println(serverString);
+            }
+*/

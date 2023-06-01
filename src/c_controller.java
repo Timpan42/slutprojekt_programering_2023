@@ -5,9 +5,9 @@ public class c_controller {
     clients clients;
     draw bord;
 
-    public c_controller(){
+    public c_controller(String clientNamn){
         clients = new clients();
-        bord = new draw("clients", true);
+        bord = new draw(clientNamn, true);
 
         clients.setWarPoints(3);
 
@@ -18,11 +18,11 @@ public class c_controller {
         clients.getStreams();
 
 
-
         bord.getButtonReady().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 playerIsReady();
+                clients.serverMessage();
             }
         });
 

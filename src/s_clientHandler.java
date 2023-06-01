@@ -11,6 +11,7 @@ public class s_clientHandler implements Runnable {
     public int[] bordInfo = {0, 0};
     public String playerInfoIn;
     public int clientNumber;
+    public String message;
 
     public s_clientHandler(Socket clientsSocket, int clientNumber) throws IOException {
         this.clients = clientsSocket;
@@ -26,7 +27,11 @@ public class s_clientHandler implements Runnable {
                 System.out.println("client index number: " + clientNumber);
                 receivePlayerInfo();
                 playerRequest();
+                serverOut.writeObject(sendClientNumber());
+
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         } finally {
             try {
                 serverOut.close();
@@ -38,14 +43,18 @@ public class s_clientHandler implements Runnable {
 
     }
 
+    public int sendClientNumber(){
+        return clientNumber;
+    }
     public void receivePlayerInfo() {
         try {
-            if (serverIn.readObject() instanceof Integer[]) {
+            Object input = serverIn.readObject();
+            if (input instanceof Integer[]) {
                 System.out.println("Funkar? bord");
-                bordInfo = (int[]) serverIn.readObject();
+                bordInfo = (int[]) input;
             } else {
                 System.out.println("Funkar? player");
-                playerInfoIn = (String) serverIn.readObject();
+                playerInfoIn = (String) input;
             }
         } catch (IOException | ClassNotFoundException e) {
             System.err.println("Server: Could not get PlayerInfo!");
@@ -66,3 +75,4 @@ public class s_clientHandler implements Runnable {
         }
     }
 }
+
