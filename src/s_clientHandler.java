@@ -65,7 +65,7 @@ public class s_clientHandler implements Runnable {
 
     public void playerRequest() {
         if (playerInfoIn.equals("M")) {
-            System.out.println("Server: " + bordInfo + " ...");
+            System.out.println("Server: Move ...");
         } else if (playerInfoIn.equals("A")) {
             System.out.println("Server: Attack ...");
         } else if (playerInfoIn.equals("H")) {
