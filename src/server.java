@@ -1,4 +1,5 @@
 import java.io.*;
+import java.lang.reflect.Array;
 import java.lang.reflect.Executable;
 import java.net.*;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class server {
     public String playerInfoIn;
 
     public ArrayList<s_clientHandler> clients = new ArrayList<>();
+    public int clientNumber;
     public ExecutorService pool = Executors.newFixedThreadPool(8);
 
     /*
@@ -48,9 +50,10 @@ public class server {
         try {
             while (true){
                 client = server.accept();
-                s_clientHandler clientHandler = new s_clientHandler(client);
-                clients.add(clientHandler);
-                pool.execute(clientHandler);
+                s_clientHandler cH = new s_clientHandler(client, clientNumber);
+                clients.add(cH);
+                pool.execute(cH);
+                clientNumber += 1;
                 System.out.println("Server: Clients accepted ...");
             }
         } catch (IOException e){
