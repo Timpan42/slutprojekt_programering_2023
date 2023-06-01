@@ -67,4 +67,13 @@ Behöver ändra i draw filen så controllen kan använda och ändra på informat
 ### Fredag
 Har gjort en ActionListener till knapparna
 samt en funktion som ska updatera brädan 
-så spelaren rör på sig. Funkar inte riktigt  
+så spelaren rör på sig. Funkar inte riktigt 
+
+## vecka 21
+### Torsdag
+Fixade så att clienten kan skicka info till servern
+och sen kan servern skicka info till clienten.
+Nu behöves bara rätt info skickas mellan varandra och den ska användas.
+
+### Fredag
+PM dagen 
