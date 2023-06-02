@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="slutprojekt_programering_2023:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/slutprojekt_programering_2023_jar2</output-path>
+    <root id="archive" name="slutprojekt_programering_2023.jar">
+      <element id="module-output" name="slutprojekt_programering_2023" />
+      <element id="library" level="project" name="core  (2)" />
+      <element id="library" level="project" name="core (2)" />
+      <element id="library" level="project" name="core" />
+    </root>
+  </artifact>
+</component>
