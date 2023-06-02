@@ -1,3 +1,5 @@
+package client;
+
 import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
 
 import javax.swing.*;

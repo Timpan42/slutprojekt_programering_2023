@@ -1,9 +1,8 @@
+package server;
+
 import java.io.*;
-import java.lang.reflect.Array;
-import java.lang.reflect.Executable;
 import java.net.*;
 import java.util.ArrayList;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -45,7 +44,7 @@ public class server {
         System.out.println("Server: Servern är startad ...");
     }
 
-    // ta i mot clients
+    // ta i mot client.clients
     public void acceptClients() {
         try {
             while (true) {
@@ -57,7 +56,7 @@ public class server {
                 System.out.println("Server: Clients accepted ...");
             }
         } catch (IOException e) {
-            System.err.println("Server: Did not accept clients!");
+            System.err.println("Server: Did not accept client.clients!");
             e.printStackTrace();
         }
     }
@@ -66,22 +65,22 @@ public class server {
     /*
     public void getStreams(){
         try {
-            serverOut = new ObjectOutputStream(clients.getOutputStream());
-            serverIn = new ObjectInputStream(clients.getInputStream());
+            serverOut = new ObjectOutputStream(client.clients.getOutputStream());
+            serverIn = new ObjectInputStream(client.clients.getInputStream());
         } catch (IOException e){
-            System.err.println("Server: Did not get clients streams!");
+            System.err.println("Server: Did not get client.clients streams!");
             e.printStackTrace();
         }
-        System.out.println("Server: Have server streams ...");
+        System.out.println("Server: Have server.server streams ...");
     }
 */
 
-    // Sätter meddelandet som ska skickas till client
+    // Sätter meddelandet som ska skickas till client.client
     public void setMessage(String msg) {
         message = msg;
     }
 
-    // Skicka meddelandet till client
+    // Skicka meddelandet till client.client
     public void sendMessage() {
         try {
             serverOut.writeObject(message);

@@ -1,7 +1,7 @@
 # Slut projekt
 Det projekt ska jag göra ett spel som använder sig av
 nätverk teknik och den vituella designen kommer vara ett swing GUI.
-I spelet är man en tank som kan röra runt sig i en rutig bräda
+I spelet är man en client.tank som kan röra runt sig i en rutig bräda
 samt kunna skjuta andra spelare, dock kommer det att använda ett krigs poäng för att göra något.
 
 ## Regler 
@@ -20,7 +20,7 @@ samt kunna skjuta andra spelare, dock kommer det att använda ett krigs poäng f
 
 ## Behöver fixa
 - Kunna skapa en koppling mellan alla spela och den som hostar spelet.(En av spelarna)
-- Behöver en server och klienter.
+- Behöver en server.server och klienter.
 - Lära sig bättre hur man kan skapa denna nätverks koppling.
 - En synlig bräda med spelare som är enkla block
 - Att välja ett dra görs med att trycka en knapp vad man vill göra och sen välja klar.

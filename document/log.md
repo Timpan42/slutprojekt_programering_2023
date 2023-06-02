@@ -6,7 +6,7 @@ Figma skiss: https://www.figma.com/file/8ZKrw4c9AARgrZiZ94sVRn/Untitled?node-id=
 
 Nätverkskoppling:  
 En av spelaren få starta servern så andra kan joina den personens ip.
-För att spela måste man vara en client.
+För att spela måste man vara en client.client.
 Clientetn skicka info till servern som uppdaterar brädan.
 Alla kan se brädan på sin skärm som uppdateras av servern.
 
@@ -40,13 +40,13 @@ Skrev klart readme och gjorde klass diagram
 
 ## vecka 18
 ### Torsdag
-Utveklade klass diagram och började med att göra all info till tank.
+Utveklade klass diagram och började med att göra all info till client.tank.
 Gjorde också clientet där moment logiken har börjas men inte testat.
 
 ### Fredag
 Fixade stora delar av clienten och utökade den med info jag tror kommer att behövas.
 Gjorde så man kan heala, skjuta, om man blir skjuten och om man dör. 
-Utökade med mer info i tank som kan behövas. 
+Utökade med mer info i client.tank som kan behövas. 
 Hittade en guide som kommer att användas för att göra GUI för spelet. 
 
 ## vecka 19
@@ -60,9 +60,9 @@ Sjuk denna dag
 
 ## vecka 21
 ### Torsdag
-Jag har gjort en server och client som kan skicka info i mella dem
+Jag har gjort en server.server och client.client som kan skicka info i mella dem
 Har börjat att koppla ihop alla delar med varandra.
-Behöver ändra i draw filen så controllen kan använda och ändra på informationen 
+Behöver ändra i client.draw filen så controllen kan använda och ändra på informationen 
 
 ### Fredag
 Har gjort en ActionListener till knapparna

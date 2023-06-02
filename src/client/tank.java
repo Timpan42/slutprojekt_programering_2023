@@ -1,3 +1,5 @@
+package client;
+
 public class tank {
     public int hp = 3;
     public int warPoints;

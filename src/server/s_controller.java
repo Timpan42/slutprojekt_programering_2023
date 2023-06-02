@@ -1,3 +1,7 @@
+package server;
+
+import client.draw;
+
 public class s_controller {
     public server server;
     public draw bord;

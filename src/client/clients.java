@@ -1,3 +1,5 @@
+package client;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -41,10 +43,10 @@ public class clients extends client {
             clientOut = new ObjectOutputStream(server.getOutputStream());
             clientIn = new ObjectInputStream(server.getInputStream());
         } catch (IOException e){
-            System.err.println("Client: Did not get server streams!");
+            System.err.println("Client: Did not get server.server streams!");
             e.printStackTrace();
         }
-        System.out.println("Client: Have server streams ...");
+        System.out.println("Client: Have server.server streams ...");
     }
 
 
