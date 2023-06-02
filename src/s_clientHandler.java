@@ -52,9 +52,11 @@ public class s_clientHandler implements Runnable {
             if (input instanceof Integer[]) {
                 System.out.println("Funkar? bord");
                 bordInfo = (int[]) input;
-            } else {
+            } else if (input instanceof String){
                 System.out.println("Funkar? player");
                 playerInfoIn = (String) input;
+            } else {
+                System.out.println("Not String or int[]");
             }
         } catch (IOException | ClassNotFoundException e) {
             System.err.println("Server: Could not get PlayerInfo!");
