@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(35, 35, 35);
+}
+
+.yellow_box{
+    background-color: #dcdcdc   ;
+    width: auto;
+    padding: 3%;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;   
+}
