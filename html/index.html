@@ -12,25 +12,32 @@
 <body>
     <main>
         <div class="yellow_box">
-            <h1>Ett multiplayer client.tank spel</h1>
+            <h1>Ett multiplayer tank spel</h1>
             <h2>Viktigt att köra i konsolen/cmd!</h2>
             <p>Kommando: java -jar [directory]\server.jar</p>
             <p>Kommando: java -jar [directory]\client.jar</p>
 
 
             <p>Server</p>
-            <a href="" download="">
+            <a href="" download="server.jar">
                 <button type="button">Server</button>
             </a>
 
             <p>Klient</p>
-            <a href="" download="">
+            <a href="" download="client.jar">
                 <button type="button">Klient</button>
             </a>
 
             <p>
-                Man kan skicka informationen till serven från klienten. Spel brädan funkar inte just nu, den uppdaterar inte.
+                När man trycker på Ready knappen skickas information till servern från klienten.
+                Om man väljer Heal, Move eller Attack före man trycker Ready skickas speciell information till servern som är relaterade till dem tre valen.
             </p>
+
+            <p>
+                Dem gör inget just nu förutom att skicka informationen till servern. 
+                Spel brädan funkar inte just nu, den uppdaterar inte.
+            </p>
+            
             <p>
                 Har också en bug där om man börja med att försöka röra på sig innan man gör något annan så kan allt krascha
             </p>
