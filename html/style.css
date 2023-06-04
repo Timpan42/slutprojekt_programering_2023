@@ -1,9 +1,9 @@
 body{
-    background-color: rgb(35, 35, 35);
+    background-color: #dcdcdc;
 }
 
 .yellow_box{
-    background-color: #dcdcdc   ;
+    background-color: #f1efef   ;
     width: auto;
     padding: 3%;
     margin-right: 15%;
